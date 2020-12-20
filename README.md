@@ -1,5 +1,5 @@
-# Project Starter 
-A starter repo for building CUNY Tech Prep projects with React, Express.js, and Sequelize.js
+Pulp is mainly copy of my version of TripGram
+I got ecited on this product and I am developing this version on my own.
 
 ## Stack
 
@@ -150,3 +150,5 @@ git push heroku master
 
 > This command deploys your master branch. You can change that and deploy a different branch such as: `git push heroku development`
 
+Pulp is mainly copy of my version of TripGram
+I got ecited on this product and I am developing this version on my own.
