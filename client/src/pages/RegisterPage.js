@@ -10,6 +10,7 @@ class RegisterPage extends React.Component {
         password:'',
         firstName:'',
         lastName:'',
+        userName:'',
       }
       firstChanged = (event) => {
         this.setState({
@@ -31,6 +32,12 @@ class RegisterPage extends React.Component {
                 password: event.target.value,
               });
             }
+           userNameChanged = (event) => {
+              this.setState({
+               userName: event.target.value,
+              });
+            }
+
             
       saveUser = (event) => {
         event.preventDefault();
@@ -40,7 +47,7 @@ class RegisterPage extends React.Component {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({firstName:this.state.firstName, lastName:this.state.lastName, email:this.state.email, password:this.state.password}),
+          body: JSON.stringify({firstName:this.state.firstName, lastName:this.state.lastName, email:this.state.email, password:this.state.password, userName:this.state.userName}),
         })
           .then(res => {
             if(res.ok) {
@@ -77,23 +84,30 @@ class RegisterPage extends React.Component {
     return (
 
       <form>
-          <div className="input-group">
+        
+            
         { errorMessage }
-     
-             <input 
+        <input 
+            type="userName"
+            className="form-control"
+            name="userName"
+            placeholder="userName" 
+            value={this.state.userName} 
+            onChange={this.userNameChanged} />
+           <input 
             type="First Name"
             className="form-control"
             name="firstName"
             placeholder="FirstName" 
             value={this.state.firstName} 
             onChange={this.firstChanged} />
-         <input 
+        <input 
             type="Last Name"
             className="form-control"
             name="lastname"
             placeholder="LastName" 
             value={this.state.lastName} 
-            onChange={this.lastChanged} />
+            onChange={this.lastChanged} /> 
              <input 
             type="email"
             className="form-control"
@@ -108,10 +122,11 @@ class RegisterPage extends React.Component {
             placeholder="Password" 
             value={this.state.password} 
             onChange={this.passChanged} />
+            
          
          
         <button className="btn btn-primary" onClick={this.saveUser}>Register</button>
-        </div>
+  
       </form>
     );
   }

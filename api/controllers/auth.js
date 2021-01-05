@@ -10,6 +10,7 @@ router.post('/signup', (req, res) => {
     lastName: req.body.lastName,
     email: req.body.email,
     password: req.body.password,
+    userName:req.body.userName,
   })
     .then((user) => {
       req.login(user, () => res.status(201).json(user));

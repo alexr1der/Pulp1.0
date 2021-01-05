@@ -94,6 +94,18 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.get('/states', (req, res) => {
+  const { email } = req.user.email;
+  Post.findAll({ attributes: [zipcode], where: {email:email}})
+    .then(post => {
+      if(!post) {
+        return res.sendStatus(404);
+      }
+
+      res.json(post);
+    });
+});
+
 
 router.put('/:id',
   passport.isAuthenticated(),

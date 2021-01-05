@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
      category:{ type: DataTypes.STRING},
      parking:{ type: DataTypes.STRING},
      username:{ type: DataTypes.STRING},
-   
+     
   }, {
     sequelize,
     modelName: 'post'

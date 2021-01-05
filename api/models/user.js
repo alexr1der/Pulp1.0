@@ -32,7 +32,12 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
-  }, {
+    friends: { type: DataTypes.STRING },
+    mainPicture1: { type: DataTypes.STRING, default: "uploads/profile/1.js" },
+    userName: { type: DataTypes.STRING },
+   // bio:{type:DataTypes.TEXT},
+  },
+   {
     sequelize,
     modelName: 'user'
   });

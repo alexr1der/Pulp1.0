@@ -29,6 +29,11 @@ class LoginPage extends React.Component {
         this.setState({ failed: true });
       });
   }
+  toRegister = (e) => {
+    const { cc } = this.props.location.state || { cc: { pathname: '/register' } };
+    return <Redirect to={cc}/>;
+  }
+
 
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
@@ -44,8 +49,9 @@ class LoginPage extends React.Component {
     }
 
     return (
-      <form onSubmit={this.login}>
-        <div className="form-row">
+      
+      <form>
+            
           { err }
           <input 
             type="email"
@@ -64,11 +70,17 @@ class LoginPage extends React.Component {
           <button 
             type="submit"
             className="btn btn-primary ml-auto"
+            onClick={this.login}
           >Login</button>
-        </div>
-      </form>
+     
+</form>
+     
+
+    
     );
+  
   }
-}
+ 
+} 
 
 export default LoginPage;

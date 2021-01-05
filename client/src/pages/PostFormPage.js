@@ -15,6 +15,7 @@ class PostFormPage extends React.Component {
     category:'',
     parking:'',
     mainpicture:'',
+
   }
 
   nameoftheplaceChanged = (event) => {
@@ -67,6 +68,7 @@ class PostFormPage extends React.Component {
       mainpicture: event.target.files[0] })
 }
 
+
   savePost = (event) => {
     event.preventDefault();
     
@@ -110,7 +112,7 @@ class PostFormPage extends React.Component {
         });
       });
   }
-
+  
   render() {
     if(this.state.success) return <Redirect to="/" />;
 
@@ -200,7 +202,8 @@ class PostFormPage extends React.Component {
              //value={this.state.mainpicture}
             // className="form-control mr-3 rounded"
              onChange={this.onFileChange}/>
-            
+             
+          
           
 
           <button className="btn btn-primary" onClick={this.savePost}>Save Post</button>
