@@ -7,7 +7,7 @@ let maincolor='#F90000';
 
 
 function Mypage({id, firstName, lastName, friends, mainPicture1, userName,}) {
-  
+
 
 /*console.log(allGs.length);
 for (var i=0; i<allGs.length; i++) {
@@ -112,11 +112,11 @@ for (var i=0; i<allGs.length; i++) {
     
   );
 }
-function Mypage1() {
-  var allGs = document.getElementsByTagName('path');
-  console.log(allGs[0]);
+//function Mypage1() {
+  //var allGs = document.getElementsByTagName('path');
+  //console.log(allGs[0]);
 
-console.log(allGs.length);
-}
+//console.log(allGs.length);
+//}
 
 export default Mypage;
